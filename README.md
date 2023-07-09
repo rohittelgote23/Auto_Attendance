@@ -15,13 +15,13 @@ This is an auto attendance system developed using Django framework and integrate
 1. Clone the repository:
 
    ```shell
-   git clone https://github.com/rohittelgote23/Auto-Attendance.git
+   git clone https://github.com/rohittelgote23/Auto_Attendance.git
    ```
 
 2. Navigate to the project directory:
 
    ```shell
-   cd Auto-Attendance
+   cd Auto_Attendance
    ```
 
 3. Create and activate a virtual environment:
