@@ -1,0 +1,102 @@
+{% extends 'attendence_sys/main.html' %}
+
+{% block content %}
+<div class="container">
+    {% for message in messages %}
+        {% if message.tags == 'error' %}
+        <div class="alert alert-danger" role="alert">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+              </button>
+              {{ message }}
+        </div>
+        {% else %}
+        <div class="alert alert-success" role="alert">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+              </button>
+              {{ message }}
+        </div>
+        {% endif %}
+    {% endfor %}
+
+    
+
+    <div  style="margin-top: 70px;" >
+        <div class="card card-body">
+            <center><h3>Add Student</h3></center>
+            <form class="form-horizontal" action="" method="POST" enctype="multipart/form-data">
+                {% csrf_token %}
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <label class="control-label">Enter First Name:</label>
+                            <input name="firstname" type="text" class="form-control" placeholder="Enter first name">
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <label class="control-label">Enter Last Name:</label>
+                            <input name="lastname" type="text" class="form-control" placeholder="Enter last name">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label class="control-label">Enter Registration ID:</label>
+                            <input name="registration_id" type="text" class="form-control" placeholder="Enter registration ID">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-4">
+                        <div class="form-group">
+                            <label for="sel1">Select Branch:</label>
+                            <select name='branch' class="form-control" id="sel1">
+                                <option value="CSE">CSE</option>
+                                <option value="IT">I    T</option>
+                                <option value="ECE">ECE</option>
+                                <option value="EEE">EEE</option>
+                                <option value="MECH">MECH</option>
+                                <option value="CHEM">CHEM</option>
+                                <option value="CIVIL">CIVIL</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="form-group">
+                            <label for="sel1">Select Year:</label>
+                            <select name='year' class="form-control" id="sel1">
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="form-group">
+                            <label for="sel1">Select Section:</label>
+                            <select name='section' class="form-control" id="sel1">
+                                <option value="A">A</option>
+                                <option value="B">B</option>
+                                <option value="C">C</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label class="control-label">Upload Profile Picture:</label>
+                            <input name="profile_pic" type="file" class="form-control-file">
+                        </div>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-block btn-info">Submit</button>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

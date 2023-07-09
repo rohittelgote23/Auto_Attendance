@@ -1,0 +1,56 @@
+{% load static %}
+
+
+<style>
+  .hello-msg{
+    font-size: 18px;
+    color: #fff;
+    margin-right: 20px;
+    
+  }
+  #ooo{
+  color: #17A2B8;
+  text-align: left;
+  
+  font-size: large;
+  }
+</style>
+
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top bg-dark">
+ <img src="/static/images/logo (2).png"   alt="GCOEJ" height="50px" width="50px"> 
+ <span class="nav-link"  id="ooo" >Hello , {{ request.user.faculty }}</span>
+ 
+  <a href="{% url 'home' %}" class="nav-link" style="color:white  ;">Home</a>
+  
+  <a class="nav-link"  href="http://127.0.0.1:8000/add_student/" style="color: #fff;">Add Student </a>
+
+  <a class="nav-link"  href="http://127.0.0.1:8000/searchattendence/" style="color: #fff;">Search Attendence </a>
+
+  <a class="nav-link"  href="http://127.0.0.1:8000/students/" style="color: #fff;">Student List </a>
+
+  
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="true" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav ml-auto">
+      <!-- <li class="nav-item active" >
+        <span class="nav-link"  id="ooo" >Hello , {{ request.user.faculty }}</span>
+      </li>
+      <li class="nav-item active">
+        <a href="{% url 'home' %}" class="nav-link">Home</a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href="{% url 'account' %}">Account</a>
+      </li>  -->
+      <li class="nav-item">
+        <a class="nav-link" href="http://127.0.0.1:8000/admin" style="color:white  ;">Account</a>
+      </li>
+      <li>
+        <a class="nav-link" href="{% url 'logout' %}">Logout</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+<img src="gc.png" alt="fff">
